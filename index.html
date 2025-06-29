@@ -3,89 +3,196 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <meta name="google-site-verification" content="xVUZLpoXMp0utqG7cQh-faRAO-BIdkcADQ1TyQh2uCo" />
-  <title>Eleak Course Hub Apk</title>
-  <!-- SEO Meta Tags -->
-  <meta name="description" content="Download the latest version of the E-LEAK App APK for Android. Fast, secure, and always up-to-date. Click here to get the official E-LEAK APK." />
-  <meta name="keywords" content="E-LEAK, E-LEAK App, Download APK, E-LEAK APK, Android, Latest Version, Free Download" />
-  <meta name="robots" content="index, follow" />
-  <meta name="author" content="E-LEAK Team" />
-  <!-- Canonical Tag -->
-  <link rel="canonical" href="https://e-leak-in.vercel.app/" />
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <title>E-Leak App - Free Educational Resources</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
+    :root {
+      --primary: #6c5ce7;
+      --secondary: #a29bfe;
+      --dark: #1e272e;
+      --light: #f5f6fa;
+      --accent: #00cec9;
+    }
     * {
-      box-sizing: border-box;
       margin: 0;
       padding: 0;
+      box-sizing: border-box;
     }
-
     body {
       font-family: 'Poppins', sans-serif;
-      background: linear-gradient(135deg, #2f3542, #57606f);
-      color: #fff;
+      background: linear-gradient(135deg, #1e272e 0%, #2d3436 100%);
+      color: var(--light);
+      overflow-x: hidden;
+    }
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 2rem;
+    }
+    header {
+      text-align: center;
+      margin-bottom: 1rem;
+      animation: fadeIn 1s ease;
+      position: relative;
+    }
+    .logo-container {
+      position: relative;
+      width: 150px;
+      height: 150px;
+      margin: 0 auto 1rem;
       display: flex;
       align-items: center;
       justify-content: center;
-      height: 100vh;
-      animation: fadeIn 1s ease-in-out;
+      animation: float 6s ease-in-out infinite;
     }
-
-    .container {
-      text-align: center;
-      background: rgba(255, 255, 255, 0.05);
-      padding: 2rem;
-      border-radius: 20px;
-      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
-      max-width: 400px;
-      width: 90%;
+    .logo-bg {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      background: linear-gradient(45deg, var(--primary), var(--accent));
+      box-shadow: 0 10px 30px rgba(108, 92, 231, 0.4);
+      opacity: 0.7;
+      animation: pulse 4s infinite;
+      z-index: 0;
     }
-
+    .logo-img {
+      width: 80%;
+      height: 80%;
+      object-fit: contain;
+      border-radius: 50%;
+      background: white;
+      padding: 10px;
+      z-index: 1;
+      transition: transform 0.5s ease;
+      filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.3));
+    }
+    .logo-container:hover .logo-img {
+      transform: scale(1.1) rotate(5deg);
+    }
     h1 {
-      font-size: 2rem;
+      font-size: 2.8rem;
       margin-bottom: 1rem;
+      background: linear-gradient(to right, var(--primary), var(--accent));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      text-shadow: 0 2px 10px rgba(108, 92, 231, 0.3);
+      animation: textGlow 2s infinite alternate;
     }
-
-    p {
-      font-size: 1rem;
-      margin-bottom: 2rem;
-      color: #ced6e0;
+    .subtitle {
+      font-size: 1.2rem;
+      opacity: 0.9;
+      margin-bottom: 1.5rem;
     }
-
+    .download-btn-container {
+      margin: 1.5rem 0 3rem;
+      animation: bounceIn 1s ease;
+    }
     .download-btn {
-      display: inline-block;
-      padding: 0.8rem 1.5rem;
-      font-size: 1rem;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 1rem 2.5rem;
+      background: linear-gradient(45deg, var(--primary), var(--secondary));
+      color: white;
+      font-size: 1.2rem;
       font-weight: 600;
-      color: #fff;
-      background: #1e90ff;
-      border: none;
       border-radius: 50px;
       text-decoration: none;
-      transition: background 0.3s ease, transform 0.2s ease;
+      box-shadow: 0 10px 20px rgba(108, 92, 231, 0.4);
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+      border: none;
+      cursor: pointer;
     }
-
     .download-btn:hover {
-      background: #3742fa;
       transform: translateY(-3px);
+      box-shadow: 0 15px 30px rgba(108, 92, 231, 0.6);
+      background: linear-gradient(45deg, var(--secondary), var(--primary));
     }
-
-    @keyframes fadeIn {
-      0% {
-        opacity: 0;
-        transform: translateY(30px);
-      }
-      100% {
-        opacity: 1;
-        transform: translateY(0);
-      }
+    .download-btn i {
+      margin-right: 10px;
+      font-size: 1.5rem;
     }
+    .download-btn::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+      transition: 0.5s;
+    }
+    .download-btn:hover::before {
+      left: 100%;
+    }
+    footer {
+      text-align: center;
+      margin-top: 4rem;
+      padding-top: 2rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    .social-links {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      margin-bottom: 1.5rem;
+    }
+    .social-links a {
+      color: var(--light);
+      font-size: 1.8rem;
+      transition: all 0.3s ease;
+      display: inline-block;
+    }
+    .social-links a:hover {
+      color: var(--accent);
+      transform: translateY(-5px) scale(1.1);
+    }
+    .copyright {
+      opacity: 0.6;
+      font-size: 0.9rem;
+    }
+    @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+    @keyframes float { 0% { transform: translateY(0); } 50% { transform: translateY(-15px); } 100% { transform: translateY(0); } }
+    @keyframes pulse { 0% { transform: scale(1); opacity: 0.7; } 50% { transform: scale(1.05); opacity: 0.9; } 100% { transform: scale(1); opacity: 0.7; } }
+    @keyframes textGlow { from { text-shadow: 0 0 10px rgba(108, 92, 231, 0.3); } to { text-shadow: 0 0 20px rgba(108, 92, 231, 0.6); } }
+    @keyframes bounceIn { 0% { transform: scale(0.8); opacity: 0; } 60% { transform: scale(1.05); opacity: 1; } 100% { transform: scale(1); } }
   </style>
 </head>
 <body>
   <div class="container">
-    <h1>DOWNLOAD E-LEAK APP</h1>
-    <p>Click the button below to download the latest version of the APK.</p>
+    <header>
+      <div class="logo-container">
+        <div class="logo-bg"></div>
+        <img src="https://i.ibb.co/XZJkJ7xF/a5f7295b-f621-4163-b66d-8edadf7721d8-removebg-preview-1.png" alt="E-Leak Logo" class="logo-img">
+      </div>
+      <h1>E-Leak App</h1>
+      <p class="subtitle">Get free access to premium educational resources for Classes 9, 10 & 11</p>
+      <div class="download-btn-container">
+        <a href="https://github.com/sarthak69I/apk/releases/download/v19.2/app-release.apk" class="download-btn">
+          <i class="fas fa-download"></i> Download Now
+        </a>
+        <p class="version"></p>
+      </div>
+    </header>
+    <footer>
+      <div class="social-links">
+        <a href="https://www.youtube.com/@NEXTTOPPER-freeBATCH" target="_blank" title="YouTube">
+          <i class="fab fa-youtube"></i>
+        </a>
+        <a href="https://t.me/eleakcoursehub" target="_blank" title="Telegram">
+          <i class="fab fa-telegram"></i>
+        </a>
+      </div>
+      <p class="copyright"> E-Leak</p>
+    </footer>
+  </div>
+</body>
+</html>
+
     <a href="https://github.com/sarthak69I/apk/releases/download/v13.1/E-Leak_13_1.0.apk" class="download-btn" download>⬇️ Download APK</a>
   </div>
 </body>
