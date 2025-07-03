@@ -23,6 +23,8 @@
   <!-- Fonts and Icons -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- Cloudflare Turnstile -->
+  <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
   <style>
     :root {
       --primary: #6c5ce7;
@@ -146,6 +148,11 @@
     .download-btn:hover::before {
       left: 100%;
     }
+    .turnstile-container {
+      margin: 1.5rem auto;
+      display: flex;
+      justify-content: center;
+    }
     footer {
       text-align: center;
       margin-top: 4rem;
@@ -188,6 +195,12 @@
       </div>
       <h1>ELeak Course Hub</h1>
       <p class="subtitle">Get free access to premium educational resources for Classes 9, 10 & 11</p>
+      
+      <!-- Cloudflare Turnstile Widget -->
+      <div class="turnstile-container">
+        <div class="cf-turnstile" data-sitekey="0x4AAAAAABjZTiJMp4s53ry2" data-theme="dark"></div>
+      </div>
+      
       <div class="download-btn-container">
         <a href="https://github.com/sarthak69I/apk/releases/download/v19.2/app-release.apk" class="download-btn">
           <i class="fas fa-download"></i> Download Now
@@ -204,8 +217,14 @@
           <i class="fab fa-telegram"></i>
         </a>
       </div>
-      <p class="copyright">© 2023 ELeak</p>
+      <p class="copyright">© 2025 ELeak</p>
     </footer>
   </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // Optional: Add any client-side verification logic here
+    });
+  </script>
 </body>
 </html>
