@@ -23,8 +23,8 @@
   <!-- Fonts and Icons -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <!-- Cloudflare Turnstile -->
-  <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
+  <!-- reCAPTCHA API -->
+  <script src="https://www.google.com/recaptcha/api.js" async defer></script>
   <style>
     :root {
       --primary: #6c5ce7;
@@ -148,8 +148,8 @@
     .download-btn:hover::before {
       left: 100%;
     }
-    .turnstile-container {
-      margin: 1.5rem auto;
+    .recaptcha-container {
+      margin: 1rem 0;
       display: flex;
       justify-content: center;
     }
@@ -195,14 +195,11 @@
       </div>
       <h1>ELeak Course Hub</h1>
       <p class="subtitle">Get free access to premium educational resources for Classes 9, 10 & 11</p>
-      
-      <!-- Cloudflare Turnstile Widget -->
-      <div class="turnstile-container">
-        <div class="cf-turnstile" data-sitekey="0x4AAAAAABjZTiJMp4s53ry2" data-theme="dark"></div>
-      </div>
-      
       <div class="download-btn-container">
-        <a href="https://github.com/sarthak69I/apk/releases/download/v19.2/app-release.apk" class="download-btn">
+        <div class="recaptcha-container">
+          <div class="g-recaptcha" data-sitekey="6Ld032grAAAAAOFNIarNoLD1WEHMLPremOGjz10s"></div>
+        </div>
+        <a href="https://github.com/sarthak69I/apk/releases/download/v19.2/app-release.apk" class="download-btn" id="downloadBtn">
           <i class="fas fa-download"></i> Download Now
         </a>
         <p class="version"></p>
@@ -222,8 +219,12 @@
   </div>
 
   <script>
-    document.addEventListener('DOMContentLoaded', function() {
-      // Optional: Add any client-side verification logic here
+    // Optional: Add validation to prevent download until reCAPTCHA is completed
+    document.getElementById('downloadBtn').addEventListener('click', function(e) {
+      if(grecaptcha.getResponse().length === 0) {
+        e.preventDefault();
+        alert('Please complete the reCAPTCHA verification first.');
+      }
     });
   </script>
 </body>
