@@ -1,239 +1,279 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>E-leak Courses Hub - Download Official App</title>
-  <!-- SEO Meta Tags -->
-  <meta name="google-site-verification" content="xVUZLpoXMp0utqG7cQh-faRAO-BIdkcADQ1TyQh2uCo" />
-  <meta name="description" content="Download ELeak Course Hub app for free access to premium educational resources for Classes 9, 10 & 11. Get study materials, notes, and more.">
-  <meta name="keywords" content="ELeak, Course Hub, educational app, study materials, Class 9, Class 10, Class 11, free education, download app">
-  <meta name="author" content="ELeak">
-  <meta property="og:title" content="E-leak Courses Hub - Download Official App">
-  <meta property="og:description" content="Get free access to premium educational resources for Classes 9, 10 & 11 with ELeak Course Hub app.">
-  <meta property="og:image" content="https://i.ibb.co/XZJkJ7xF/a5f7295b-f621-4163-b66d-8edadf7721d8-removebg-preview-1.png">
-  <meta property="og:url" content="https://e-leak-in.vercel.app/">
-  <meta property="og:type" content="website">
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="ELeak Course Hub - Download Official App">
-  <meta name="twitter:description" content="Get free access to premium educational resources for Classes 9, 10 & 11 with ELeak Course Hub app.">
-  <meta name="twitter:image" content="https://i.ibb.co/XZJkJ7xF/a5f7295b-f621-4163-b66d-8edadf7721d8-removebg-preview-1.png">
-  <link rel="canonical" href="https://e-leak-in.vercel.app/" />
-  <!-- Favicon -->
-  <link rel="icon" href="https://i.ibb.co/XZJkJ7xF/a5f7295b-f621-4163-b66d-8edadf7721d8-removebg-preview-1.png" type="image/png">
-  <!-- Fonts and Icons -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <!-- reCAPTCHA API -->
-  <script src="https://www.google.com/recaptcha/api.js" async defer></script>
-  <style>
-    :root {
-      --primary: #6c5ce7;
-      --secondary: #a29bfe;
-      --dark: #1e272e;
-      --light: #f5f6fa;
-      --accent: #00cec9;
-    }
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-    body {
-      font-family: 'Poppins', sans-serif;
-      background: linear-gradient(135deg, #1e272e 0%, #2d3436 100%);
-      color: var(--light);
-      overflow-x: hidden;
-    }
-    .container {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 2rem;
-    }
-    header {
-      text-align: center;
-      margin-bottom: 1rem;
-      animation: fadeIn 1s ease;
-      position: relative;
-    }
-    .logo-container {
-      position: relative;
-      width: 150px;
-      height: 150px;
-      margin: 0 auto 1rem;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      animation: float 6s ease-in-out infinite;
-    }
-    .logo-bg {
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      border-radius: 50%;
-      background: linear-gradient(45deg, var(--primary), var(--accent));
-      box-shadow: 0 10px 30px rgba(108, 92, 231, 0.4);
-      opacity: 0.7;
-      animation: pulse 4s infinite;
-      z-index: 0;
-    }
-    .logo-img {
-      width: 80%;
-      height: 80%;
-      object-fit: contain;
-      border-radius: 50%;
-      background: white;
-      padding: 10px;
-      z-index: 1;
-      transition: transform 0.5s ease;
-      filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.3));
-    }
-    .logo-container:hover .logo-img {
-      transform: scale(1.1) rotate(5deg);
-    }
-    h1 {
-      font-size: 2.8rem;
-      margin-bottom: 1rem;
-      background: linear-gradient(to right, var(--primary), var(--accent));
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      text-shadow: 0 2px 10px rgba(108, 92, 231, 0.3);
-      animation: textGlow 2s infinite alternate;
-    }
-    .subtitle {
-      font-size: 1.2rem;
-      opacity: 0.9;
-      margin-bottom: 1.5rem;
-    }
-    .download-btn-container {
-      margin: 1.5rem 0 3rem;
-      animation: bounceIn 1s ease;
-    }
-    .download-btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      padding: 1rem 2.5rem;
-      background: linear-gradient(45deg, var(--primary), var(--secondary));
-      color: white;
-      font-size: 1.2rem;
-      font-weight: 600;
-      border-radius: 50px;
-      text-decoration: none;
-      box-shadow: 0 10px 20px rgba(108, 92, 231, 0.4);
-      transition: all 0.3s ease;
-      position: relative;
-      overflow: hidden;
-      border: none;
-      cursor: pointer;
-    }
-    .download-btn:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 15px 30px rgba(108, 92, 231, 0.6);
-      background: linear-gradient(45deg, var(--secondary), var(--primary));
-    }
-    .download-btn i {
-      margin-right: 10px;
-      font-size: 1.5rem;
-    }
-    .download-btn::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: -100%;
-      width: 100%;
-      height: 100%;
-      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
-      transition: 0.5s;
-    }
-    .download-btn:hover::before {
-      left: 100%;
-    }
-    .recaptcha-container {
-      margin: 1rem 0;
-      display: flex;
-      justify-content: center;
-    }
-    footer {
-      text-align: center;
-      margin-top: 4rem;
-      padding-top: 2rem;
-      border-top: 1px solid rgba(255, 255, 255, 0.1);
-    }
-    .social-links {
-      display: flex;
-      justify-content: center;
-      gap: 2rem;
-      margin-bottom: 1.5rem;
-    }
-    .social-links a {
-      color: var(--light);
-      font-size: 1.8rem;
-      transition: all 0.3s ease;
-      display: inline-block;
-    }
-    .social-links a:hover {
-      color: var(--accent);
-      transform: translateY(-5px) scale(1.1);
-    }
-    .copyright {
-      opacity: 0.6;
-      font-size: 0.9rem;
-    }
-    @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
-    @keyframes float { 0% { transform: translateY(0); } 50% { transform: translateY(-15px); } 100% { transform: translateY(0); } }
-    @keyframes pulse { 0% { transform: scale(1); opacity: 0.7; } 50% { transform: scale(1.05); opacity: 0.9; } 100% { transform: scale(1); opacity: 0.7; } }
-    @keyframes textGlow { from { text-shadow: 0 0 10px rgba(108, 92, 231, 0.3); } to { text-shadow: 0 0 20px rgba(108, 92, 231, 0.6); } }
-    @keyframes bounceIn { 0% { transform: scale(0.8); opacity: 0; } 60% { transform: scale(1.05); opacity: 1; } 100% { transform: scale(1); } }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Download App</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="google-site-verification" content="xVUZLpoXMp0utqG7cQh-faRAO-BIdkcADQ1TyQh2uCo" />
+    <meta name="description" content="Download ELeak Course Hub app for free access to premium educational resources for Classes 9, 10 & 11. Get study materials, notes, and more.">
+    <meta name="keywords" content="ELeak, Course Hub, educational app, study materials, Class 9, Class 10, Class 11, free education, download app">
+    <meta name="author" content="ELeak">
+    <meta property="og:title" content="E-leak Courses Hub - Download Official App">
+    <meta property="og:description" content="Get free access to premium educational resources for Classes 9, 10 & 11 with ELeak Course Hub app.">
+    <meta property="og:image" content="https://i.ibb.co/XZJkJ7xF/a5f7295b-f621-4163-b66d-8edadf7721d8-removebg-preview-1.png">
+    <meta property="og:url" content="https://e-leak-in.vercel.app/">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="ELeak Course Hub - Download Official App">
+    <meta name="twitter:description" content="Get free access to premium educational resources for Classes 9, 10 & 11 with ELeak Course Hub app.">
+    <meta name="twitter:image" content="https://i.ibb.co/XZJkJ7xF/a5f7295b-f621-4163-b66d-8edadf7721d8-removebg-preview-1.png">
+    <link rel="canonical" href="https://e-leak-in.vercel.app/" />
+    <!-- Favicon -->
+    <link rel="icon" href="https://i.ibb.co/XZJkJ7xF/a5f7295b-f621-4163-b66d-8edadf7721d8-removebg-preview-1.png" type="image/png">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #e8f4f8 0%, #d1e7dd 50%, #f0f8ff 100%);
+            min-height: 100vh;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        /* Decorative floating elements */
+        .floating-icons {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .icon {
+            position: absolute;
+            opacity: 0.8;
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .icon-1 {
+            top: 15%;
+            right: 20%;
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(45deg, #ff9800, #f57c00);
+            border-radius: 12px;
+            transform: rotate(15deg);
+            animation-delay: 0s;
+        }
+
+        .icon-2 {
+            top: 60%;
+            left: 8%;
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(45deg, #4caf50, #388e3c);
+            border-radius: 50%;
+            animation-delay: 1s;
+        }
+
+        .icon-3 {
+            bottom: 25%;
+            right: 8%;
+            width: 45px;
+            height: 45px;
+            background: linear-gradient(45deg, #2196f3, #1976d2);
+            border-radius: 8px;
+            transform: rotate(-20deg);
+            animation-delay: 2s;
+        }
+
+        .icon-4 {
+            top: 25%;
+            left: 15%;
+            width: 35px;
+            height: 35px;
+            background: linear-gradient(45deg, #e91e63, #c2185b);
+            border-radius: 50%;
+            animation-delay: 3s;
+        }
+
+        .icon-5 {
+            bottom: 40%;
+            left: 12%;
+            width: 38px;
+            height: 38px;
+            background: linear-gradient(45deg, #9c27b0, #7b1fa2);
+            border-radius: 6px;
+            transform: rotate(25deg);
+            animation-delay: 4s;
+        }
+
+        .icon-6 {
+            top: 40%;
+            right: 25%;
+            width: 42px;
+            height: 42px;
+            background: linear-gradient(45deg, #ff5722, #d84315);
+            border-radius: 10px;
+            transform: rotate(-10deg);
+            animation-delay: 5s;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(5deg); }
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 80px 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 80px;
+            min-height: 100vh;
+            position: relative;
+            z-index: 2;
+        }
+
+        .content {
+            flex: 1;
+            max-width: 600px;
+            text-align: center;
+        }
+
+        .title {
+            font-size: 3.2rem;
+            font-weight: 800;
+            color: #00acc1;
+            margin-bottom: 25px;
+            letter-spacing: -1px;
+        }
+
+        .description {
+            font-size: 1.15rem;
+            color: #2c3e50;
+            line-height: 1.7;
+            margin-bottom: 45px;
+            font-weight: 400;
+        }
+
+        .download-buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            align-items: center;
+        }
+
+        .download-btn {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 14px 22px;
+            background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 3px 12px rgba(44, 62, 80, 0.3);
+            max-width: 250px;
+            border: none;
+            cursor: pointer;
+        }
+
+        .download-btn:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 5px 18px rgba(44, 62, 80, 0.4);
+            background: linear-gradient(135deg, #34495e 0%, #3d566e 100%);
+        }
+
+        .download-btn svg {
+            width: 22px;
+            height: 22px;
+            fill: currentColor;
+        }
+
+        .windows-btn {
+            background: linear-gradient(135deg, #0078d4 0%, #106ebe 100%);
+            box-shadow: 0 3px 12px rgba(0, 120, 212, 0.3);
+        }
+
+        .windows-btn:hover {
+            background: linear-gradient(135deg, #1084d8 0%, #1a7bc8 100%);
+            box-shadow: 0 5px 18px rgba(0, 120, 212, 0.4);
+        }
+
+        /* Responsive design */
+        @media (max-width: 968px) {
+            .container {
+                flex-direction: column;
+                gap: 50px;
+                padding: 60px 30px;
+            }
+
+            .title {
+                font-size: 2.8rem;
+            }
+
+            .description {
+                font-size: 1.1rem;
+            }
+        }
+
+        @media (max-width: 640px) {
+            .container {
+                padding: 40px 20px;
+            }
+
+            .title {
+                font-size: 2.2rem;
+            }
+
+            .description {
+                font-size: 1rem;
+            }
+
+            .floating-icons .icon {
+                display: none;
+            }
+        }
+    </style>
 </head>
 <body>
-  <div class="container">
-    <header>
-      <div class="logo-container">
-        <div class="logo-bg"></div>
-        <img src="https://i.ibb.co/XZJkJ7xF/a5f7295b-f621-4163-b66d-8edadf7721d8-removebg-preview-1.png" alt="ELeak Course Hub Logo" class="logo-img">
-      </div>
-      <h1>E-leak Course Hub</h1>
-      <p class="subtitle">Get free access to premium educational resources for Classes 9, 10 & 11</p>
-      <div class="download-btn-container">
-        <div class="recaptcha-container">
-          <div class="g-recaptcha" data-sitekey="6Ld032grAAAAAOFNIarNoLD1WEHMLPremOGjz10s"></div>
+    <!-- Floating decorative icons -->
+    <div class="floating-icons">
+        <div class="icon icon-1"></div>
+        <div class="icon icon-2"></div>
+        <div class="icon icon-3"></div>
+        <div class="icon icon-4"></div>
+        <div class="icon icon-5"></div>
+        <div class="icon icon-6"></div>
+    </div>
+
+    <div class="container">
+        <div class="content">
+            <h1 class="title">Download E-Leak App</h1>
+            <p class="description">
+                Get free access to premium educational resources for Classes 9, 10 & 11. Download the app to access study materials, notes, and more anytime, anywhere.
+            </p>
+            
+            <div class="download-buttons">
+                <a href="https://github.com/sarthak69I/apk/releases/download/v19.2/app-release.apk" class="download-btn" download>
+                    <svg viewBox="0 0 24 24">
+                        <path d="M17.523 15.3414c-.5511 0-.9993-.4486-.9993-.9997s.4482-.9993.9993-.9993c.5511 0 .9993.4482.9993.9993.0001.5511-.4482.9997-.9993.9997m-11.046 0c-.5511 0-.9993-.4486-.9993-.9997s.4482-.9993.9993-.9993c.5511 0 .9993.4482.9993.9993 0 .5511-.4482.9997-.9993.9997m11.4045-6.02l1.9973-3.4592a.416.416 0 00-.1521-.5676.416.416 0 00-.5676.1521l-2.0223 3.503C15.5902 8.7043 13.8723 8.2414 12.0003 8.2414s-3.5899.4629-5.1327 1.2318L4.845 6.4702a.4161.4161 0 00-.5677-.1521.4157.4157 0 00-.1521.5676l1.9973 3.4592C2.61 12.2344.8027 15.0313.8027 18.2707c0 .0024.0005.0047.0005.007h22.3936c.0005-.0023.0005-.0046.0005-.007 0-3.2394-1.8073-6.0363-5.3216-7.9493zM12.0003 3.4746C9.6152 3.4746 7.1776 4.9346 8.2014 7.2705c0 0 2.4038-2.7705 3.7989-2.7705s3.7989 2.7705 3.7989 2.7705c1.0238-2.3359-1.4138-3.7959-3.7989-3.7959z"/>
+                    </svg>
+                    Download for Android
+                </a>
+                
+                <a href="https://github.com/sarthak69I/apk/releases/download/exe2/E-Leak.exe" class="download-btn windows-btn" download>
+                    <svg viewBox="0 0 24 24">
+                        <path d="M3 12V6.75l6-1.32v6.48L3 12zm6 .25v6.48l-6-1.32V12.25h6zM10 5.25L21 3v8.75H10V5.25zm0 13.5V12.25H21V21l-11-2.25z"/>
+                    </svg>
+                    Download for Windows
+                </a>
+            </div>
         </div>
-        <a href="https://github.com/sarthak69I/apk/releases/download/v19.2/app-release.apk" class="download-btn" id="downloadBtn">
-          <i class="fas fa-download"></i> Download Now
-        </a>
-        <p class="version"></p>
-                </div>
-    </header>
-    <footer>
-      <div class="social-links">
-        <a href="https://www.youtube.com/@NEXTTOPPER-freeBATCH" target="_blank" title="YouTube">
-          <i class="fab fa-youtube"></i>
-        </a>
-        <a href="https://t.me/eleakcoursehub" target="_blank" title="Telegram">
-          <i class="fab fa-telegram"></i>
-        </a>
-      </div>
-      <p class="copyright">© 2025 ELeak</p>
-    </footer>
-  </div>
-
-  <!-- First Ad Script -->
-  <script type='text/javascript' src='//pl27183651.profitableratecpm.com/6f/04/ca/6f04ca2e3c46502606ac07a8bf94b9b6.js'></script>
-  
-  <!-- Second Ad Script -->
-  <script async="async" data-cfasync="false" src="//pl27183748.profitableratecpm.com/36cacca4c8ca7146ff5eeac0a4ea52c4/invoke.js"></script>
-  <div id="container-36cacca4c8ca7146ff5eeac0a4ea52c4"></div>
-
-  <script>
-    // Optional: Add validation to prevent download until reCAPTCHA is completed
-    document.getElementById('downloadBtn').addEventListener('click', function(e) {
-      if(grecaptcha.getResponse().length === 0) {
-        e.preventDefault();
-        alert('Please complete the reCAPTCHA verification first.');
-      }
-    });
-  </script>
+    </div>
 </body>
 </html>
